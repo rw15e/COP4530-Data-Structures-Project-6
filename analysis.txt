@@ -1,0 +1,13 @@
+My reading the input would be big O(N) because it does so inside of one while loop.
+My storing of the input would be big O(log N) because the insert function of std::map is logN.
+If you consider my read/store as a whole its runtime would be big O(N).
+
+
+My looking up the final tracking info/deciding on/accessing for output (printing) my "Top Ten" would be big O(N^2).
+	This is because of two for loops (nested).
+
+Kind of unsure if this is what you are looking for so I will provide basic rundown below..
+
+	One main while loop to read input. Has a big O(N)
+		Map find/map insert inside of while loop. Has a big O(log N)
+	Sorting/printing my Top Ten has a for loop nested inside a for loop. Has a big O(N^2)

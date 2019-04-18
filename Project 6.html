@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)http://www.cs.fsu.edu/~myers/cop4530/hw/hw06.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Content-Language" content="en-us">
+
+
+
+<title>Project 6</title>
+
+<style type="text/css">
+
+.style1 {
+
+	text-align: center;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.style2 {
+
+	text-align: left;
+
+}
+
+.style3 {
+
+	margin-left: 40px;
+
+}
+
+.style4 {
+
+	line-height: 115%;
+
+	font-size: 11.0pt;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	margin-left: .5in;
+
+	margin-right: 0in;
+
+	margin-top: 0in;
+
+	margin-bottom: .0001pt;
+
+}
+
+.style5 {
+
+	line-height: 115%;
+
+	font-size: 11.0pt;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	margin-left: .5in;
+
+	margin-right: 0in;
+
+	margin-top: 0in;
+
+	margin-bottom: 10.0pt;
+
+}
+
+.style7 {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.style8 {
+
+	margin-left: 40px;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.style9 {
+
+	text-align: left;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<h4 class="style1">Project 6: Word, Number, and Character Usage Statistics</h4>
+
+<p class="style1"><strong>Due: Thurs, Dec 7, 11:59 PM</strong> (100 
+Points)</p>
+
+<p class="style1"><b>Important Note: No late submissions will be 
+accepted for this one. Dec 7 is the ABSOLUTE DEADLINE, in order to leave 
+appropriate time for grading</b></p>
+
+<hr>
+
+<p class="style9"><strong>Objectives: </strong>Practice selecting and 
+making use of appropriate STL containers and algorithms to perform 
+tasks. </p>
+
+
+<p class="style9"><strong>Statement of Work:</strong> Implement a 
+program that collects the statistics of word, number, and character 
+usage in a file (redirected as the standard input).&nbsp; </p>
+
+<p class="style9"><strong>Requirements:</strong></p>
+
+<ol>
+
+     <li>
+	<p class="style2"><span class="style7">
+        Write a program that will read input (from standard input) until end of input is reached ("end of file"), 
+        which will count the number of times each word, number, and character appears in the input.
+        </span></p><ul>
+         <li>A word is defined as a consecutive sequence of letters ('a'..'z' or 'A'..'Z'). </li>
+
+         <li>Words are case insensitive ("AA", "Aa", "aA", 
+	        and "aa" are the same). </li>
+
+         <li>A number is defined as any consecutive sequence of digits ('0'..'9'). </li>
+         <li>Note that both words and numbers can be of length of 1, that is, contain one 
+             letter or one digit, respectively. </li>
+
+         <li>Different sequences represent different numbers. For example, number "001" is 
+             different from number "1". </li>
+
+
+	 <li>Words are separated by any non-letter characters. </li>
+
+         <li>Numbers are separated by any non-digit characters. </li>
+        </ul>
+
+	<br>Output specifications:
+        <ul>
+         <li>Your program should track the number of times each word, number, and 
+         	character appears.</li> 
+         <li>The program should then output the ten most used 
+	     characters, the ten most used numbers, and the ten most used words, along 
+       	     with the number of times each of these characters/numbers/words are used.</li>
+
+        <li> Since words are case insensitive, the program should only output the words in lower case.</li>
+        <li>The characters, numbers and words should be printed in descending order 
+  	    based on the number of times they are used. </li>
+        <li>Breaking ties (for the "Top Tens"):
+            <ul>
+            <li>When two characters occur the same number of times, the character with the smaller ASCII 
+                value should be considered as being used more frequently.</li>
+            <li>When two words (or numbers) occur the same number of times, the word (or number) that 
+                occurs earlier in the input should be considered as being used more frequently.&nbsp; 
+            </li></ul>
+        </li>
+       </ul>
+
+ <p></p>
+
+	</li>
+
+	<li>
+
+	<p class="style9">An example executable code of the program is provided to 
+
+	you (see below). You should make the outputs of your program match this sample executable.
+	When printing characters, use <tt>'\t'</tt> for tab and <tt>'\n'</tt> for newline. 
+
+	All other characters should be printed normally. </p>
+
+	</li>
+
+	<li>
+
+	<p class="style2"><span class="style7">Write a </span> <tt>
+
+	<span class="style7">makefile</span></tt><span class="style7"> for your project that compiles 
+
+	an executable called </span> <tt><span class="style7">proj6.x</span></tt></p>
+
+	</li>
+
+	<li>
+
+	<p class="style9">Make use of any appropriate C++ STL containers and 
+	algorithms. You should also use C++ string class instead of default c-strings.
+        Here are a few good reference links for the library lookups:
+        </p><ul>
+         <li><a href="http://www.cplusplus.com/reference/stl/">C++ STL Containers</a></li>
+         <li><a href="http://www.cplusplus.com/reference/string/string/">C++ string class library</a></li>
+        </ul>
+        Note that you should select whatever container(s) will make YOUR program's algorithms the most efficient
+        in terms of growth rate (i.e. "Big-O complexity analysis").  
+        <p></p>
+	</li>
+
+	<li>
+
+	<p class="style9">In a file called <tt>analysis.txt</tt>, write up your analysis of the complexity analysis
+        of the important algorithms and procedures in your program.  Note that your analyses will be based on not 
+        only the code YOU write, but also on the STL containers you choose for managing your data.  Your analyses
+        need to include analysis of at least (but not limited to) each of these necessary tasks:
+           </p><ul>
+           <li>Reading the input set</li>
+	   <li>Storing the characters / words / numbers in your chosen containers, and setting their tracking values</li>
+           <li>Looking up the final tracking info on your character / word / number frequencies</li>
+           <li>Deciding on (and accessing for output) your "Top Ten" most frequent list for each case</li>
+	   <li>Any other important algorithm/tasks you perform to complete the job</li>
+           </ul>
+        <p></p>
+	</li>
+
+	<li>
+        <p class="style9">While not a program requirement for 
+           submission, it is <i>recommended</i> that you verify your analysis of your program elements by testing larger
+           input sets and also by measuring the actual run time speed of those test runs.  You can do this in 
+           a program easily by using the <tt>ctime</tt> library and capturing the returns from the <tt>clock()</tt>
+           function before and after an algorithm, then subtract the two clock times to see the difference. Conver
+           to seconds by dividing by the constant <tt>CLOCKS_PER_SEC</tt>.  On linprog, you can look up more details
+           at the manual page for clock (<tt>man clock</tt>).
+        </p>
+        </li>
+
+</ol>
+
+<p class="style9"><strong>Example executable, some test cases</strong></p>
+
+<blockquote>
+
+	<p class="style7">Download a set of 4 sample test files at
+           <a href="http://www.cs.fsu.edu/~myers/cop4530/hw/hw6files/tests6.tar">this link</a>. This is a tar file containing 4 test files 
+              (test0, test1, test2, test3). You will need to unpack this tar file in your project 
+              directory. </p>
+
+	<p class="style7">When you create your own executable, you'll need to re-direct any test files
+            as the standard input to your program, like this:
+            </p><pre>      proj6.x &lt; test0 </pre>
+	<p></p>
+
+	<p class="style7">The provided example executable can be run from <tt>linprog</tt>, at the 
+            location <tt>~myers/dsprog/proj6.x</tt> . So, for example, you can run the same test file 
+            as in the example above with:
+            </p><pre>      ~myers/dsprog/proj6.x &lt; test0 </pre>
+        <p></p>
+</blockquote>
+
+
+<span class="style7"> 
+
+<br>
+
+</span>
+
+<p></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal">
+
+<span style="mso-ascii-theme-font: major-latin; mso-hansi-theme-font: major-latin" class="style7">
+
+Submission</span></b><span style="mso-ascii-theme-font: major-latin; mso-hansi-theme-font: major-latin" class="style7">
+
+</span></p>
+
+<p class="style8" style="mso-ascii-theme-font: major-latin; mso-hansi-theme-font: major-latin">
+
+Tar all of your source code, as well as your makefile and your analysis.txt file, into a 
+single tar archive and submit online via blackboard, using the Assignment 6 link.
+
+</p><p class="style8" style="mso-ascii-theme-font: major-latin; mso-hansi-theme-font: major-latin">
+Your tar file should be named in this format, all lowercase:
+</p><pre>        <i>lastname</i>_<i>firstname</i>_p6.tar
+
+        Example:  My tar file would be:     <b>myers_bob_p6.tar</b>
+</pre>
+<p></p>
+
+<p class="style3">
+
+<o:p></o:p>
+
+<span style="mso-ascii-theme-font: major-latin; mso-hansi-theme-font: major-latin" class="style7">
+
+As usual, you should also be able to download your submission and verify if it is correct. 
+
+<o:p></o:p></span><o:p></o:p></p>
+
+<p class="style8">Note that in addition to the provided test cases, we will also 
+
+test your program using additional test files. Your program must be able to pass 
+
+all the test cases in order to obtain a full score for the corresponding 
+
+components.  Part of the grading will take your choice of STL containers and your complexity 
+
+analyses into account, and testing will involve some larger sets of inputs.</p>
+
+
+<p style="mso-add-space: auto; mso-ascii-theme-font: major-latin; mso-hansi-theme-font: major-latin;" class="style4"><o:p>
+
+&nbsp;</o:p></p>
+
+<p style="mso-add-space: auto" class="style5">&nbsp;</p>
+
+
+
+
+
+
+
+
+
+</body></html>
